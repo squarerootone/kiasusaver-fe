@@ -49,6 +49,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: kiasu-saver
-          directory: ./dist
+          directory: src/apps/kiasusaver/dist
           branch: ${{ github.ref_name }}
-        working-directory: src/apps/kiasusaver
