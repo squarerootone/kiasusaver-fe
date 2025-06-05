@@ -3,3 +3,4 @@
 - don't repeat yourself, especially all the configs, across each module
 - be ready to merge into mfe platform
 - custom subdomains for dev & stg
+- tests
