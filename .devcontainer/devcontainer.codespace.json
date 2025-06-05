@@ -12,7 +12,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "alexcvzz.vscode-sqlite",
+        "ms-ossdata.vscode-sqlite"
       ],
       "settings": {
         "terminal.integrated.shell.linux": "/bin/sh"

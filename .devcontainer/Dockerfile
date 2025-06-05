@@ -1,7 +1,7 @@
 # Qwik Dev Container
 FROM node:20-slim
 
-RUN apt update && apt install -y git \
+RUN apt update && apt install -y git sqlite3 jq \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pnpm
