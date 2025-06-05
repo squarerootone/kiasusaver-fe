@@ -1,0 +1,54 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - stg
+    paths:
+      - 'src/apps/kiasusaver/**'
+  pull_request:
+    branches:
+      - "*"
+    paths:
+      - 'src/apps/kiasusaver/**'
+
+concurrency:
+  group: cloudflare-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: src/apps/kiasusaver
+
+      - name: Build project
+        run: pnpm build
+        working-directory: src/apps/kiasusaver
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: kiasu-saver
+          directory: ./dist
+          branch: ${{ github.ref_name }}
+        working-directory: src/apps/kiasusaver
