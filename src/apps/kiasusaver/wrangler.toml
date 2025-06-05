@@ -1,0 +1,8 @@
+name = "kiasusaver"
+account_id = "1a3a9e03a1e5e708bd1b5a022f9484c3"
+workers_dev = true
+main = "server/entry.cloudflare-pages.js"
+compatibility_date = "2025-06-05"
+
+[build]
+command = "pnpm build"
