@@ -1,0 +1,22 @@
+// This file is only used for local Podman/Flatpak VS Code devcontainer workflow.
+// It is ignored in Codespaces and other environments.
+{
+  "name": "Qwik Webapp DevContainer (Podman Local)",
+  "image": "my-qwik-devcontainer",
+  "postCreateCommand": "pnpm install",
+  "forwardPorts": [5173],
+  "mounts": [
+    "source=${localWorkspaceFolder}/src,target=/workspace/src,type=bind,consistency=cached"
+  ],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/sh"
+      }
+    }
+  }
+}

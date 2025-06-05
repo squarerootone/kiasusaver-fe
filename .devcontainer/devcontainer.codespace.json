@@ -1,0 +1,22 @@
+{
+  "name": "Qwik Webapp DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "pnpm install",
+  "forwardPorts": [5173],
+  "mounts": [
+    "source=${localWorkspaceFolder}/src,target=/workspace/src,type=bind,consistency=cached"
+  ],
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/sh"
+      }
+    }
+  }
+}
