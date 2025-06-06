@@ -21,6 +21,7 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist --compatibility-flags=nodejs_als",
+    "serve:env": "set -a && source .env && set +a && pnpm serve",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
     "setup:db": "bash ../../../scripts/setup-db.sh"

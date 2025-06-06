@@ -10,9 +10,14 @@ pnpm install
 pnpm --filter ./src/apps/kiasusaver setup:db
 ```
 
-## 3. Start the dev server
+## 3a. Start the dev server using vite with HMR, no D1 binding, will likely use mock data, will pick up runtime env in .env
 ```
 pnpm dev
+```
+
+## 3b. Start the dev server using wrangler with D1 binding, but no HMR (need to pre-build `pnpm build`), will pick up runtime env from .env
+```
+pnpm serve:env
 ```
 
 ## 4. Browse your local DB
