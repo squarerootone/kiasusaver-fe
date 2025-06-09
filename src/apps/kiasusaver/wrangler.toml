@@ -17,7 +17,7 @@ preview_database_id = "e57f0e68-7f6c-4e2a-bc3b-f94c84c48095"
 [[env.dev.d1_databases]]
 binding = "DB"
 database_name = "kiasu-saver-dev"
-database_id = "dev-kiasusaver"
+database_id = "ac4c3375-557e-4c96-9cef-4c86584a69c8"
 
 [env.stg]
 [[env.stg.d1_databases]]
@@ -29,4 +29,4 @@ database_id = "stg-kiasusaver"
 [[env.prod.d1_databases]]
 binding = "DB"
 database_name = "kiasu-saver-prod"
-database_id = "prod-kiasusaver"
+database_id = "84c01d44-b78c-425d-8b5a-0239d7f0b16e"
