@@ -43,5 +43,5 @@ export const onGet: RequestHandler<PlatformCloudflarePages> = async ({ platform,
   } catch {
     json(500, { error: 'Failed to fetch packages' });
   }
-};
+
 };
