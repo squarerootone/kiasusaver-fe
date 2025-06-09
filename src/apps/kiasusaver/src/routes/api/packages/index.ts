@@ -28,6 +28,7 @@ export const onGet: RequestHandler<PlatformCloudflarePages> = async ({ platform,
     WHERE p.status != 'archived'
     ORDER BY b.name, p.name
   `;
+  try {
   const result = await db.prepare(sql).all();
   const rows = result.results || [];
 
@@ -39,4 +40,8 @@ export const onGet: RequestHandler<PlatformCloudflarePages> = async ({ platform,
   }));
 
   json(200, packages);
+  } catch {
+    json(500, { error: 'Failed to fetch packages' });
+  }
+};
 };
