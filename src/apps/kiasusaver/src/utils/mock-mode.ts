@@ -11,7 +11,8 @@ export function getMockScenario(
 ): string | undefined {
   // Env var: USE_MOCK_PACKAGES, USE_MOCK_USERS, etc.
   const envVar = `USE_MOCK_${envKey}`;
-  const envMock = (platform.env?.[envVar] ?? process.env[envVar]) as string | undefined;
+  // const envMock = (platform.env?.[envVar] ?? process.env[envVar]) as string | undefined;
+  const envMock = 'default'
   const headerMock = request.headers.get('x-mock');
   return envMock || headerMock || undefined;
 }
